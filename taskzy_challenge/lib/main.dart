@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'splash.dart';
 
+
 void main() {
   runApp(MyApp());
 }
@@ -13,6 +14,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-// #306FD57

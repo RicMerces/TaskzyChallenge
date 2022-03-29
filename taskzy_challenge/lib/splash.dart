@@ -13,7 +13,7 @@ class _SplashState extends State<Splash> {
       backgroundColor: Color(0xff306fd5),
       body: Center(
         child: Column(
-          children: [],
+          children: [Image.asset('assets/images/logoOficial.png')],
         ),
       ),
     );
