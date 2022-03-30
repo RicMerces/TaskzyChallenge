@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'splash.dart';
+import 'package:taskzy/pages/onBoarding01.dart';
+import 'pages/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Splash(),
+      home: Onboarding01(),
     );
   }
 }

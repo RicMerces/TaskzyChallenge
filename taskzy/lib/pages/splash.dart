@@ -1,5 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'main.dart';
+import '../main.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -8,12 +10,24 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
+  void initState() {
+    Timer(Duration(seconds: 4), () {});
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff306fd5),
       body: Center(
         child: Column(
-          children: [Image.asset('assets/images/logoOficial.png')],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/logoOficial.png',
+              width: 200,
+            ),
+          ],
         ),
       ),
     );
