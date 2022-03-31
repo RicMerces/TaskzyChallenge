@@ -10,9 +10,25 @@ class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Row(
+        children: [
+          // padding: const EdgeInsets.symmetric(),
+          // height: 80,
+          TextButton(
+            onPressed: () {},
+            child: const Text(
+              'Skip',
+              style: TextStyle(
+                color: Color(0xff306FD5),
+                fontSize: 20,
+              ),
+            ),
+          )
+        ],
+      ),
       backgroundColor: Color(0xffF2EFE9),
       body: Container(
-        padding: const EdgeInsets.only(bottom: 80),
+        // padding: const EdgeInsets.only(bottom: 80),
         margin: const EdgeInsets.only(left: 50, right: 50.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,13 +56,6 @@ class _OnboardingState extends State<Onboarding> {
               ),
             )
           ],
-        ),
-      ),
-      bottomSheet: Container(
-        padding: const EdgeInsets.symmetric(),
-        height: 80,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskzy/pages/onBoarding.dart';
+import 'package:taskzy/pages/onBoarding02.dart';
 import 'pages/splash.dart';
 
 void main() {
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Onboarding(),
+      home: Onboarding02(),
     );
   }
 }
