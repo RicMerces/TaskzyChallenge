@@ -18,12 +18,35 @@ class _Onboarding02State extends State<Onboarding02> {
           return Padding(
             padding: const EdgeInsets.all(40),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Image.asset(
                   contents[i].images,
                   height: 300,
                 ),
                 contents[i].texts,
+                i == contents.length - 1
+                    ? TextButton(
+                        onPressed: () => {},
+                        child: const Text(
+                          'Começar',
+                          style: TextStyle(
+                            color: Color(0xff306fd5),
+                            fontSize: 22,
+                          ),
+                        ),
+                        style: TextButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          fixedSize: const Size(318, 67),
+                          side: const BorderSide(
+                            width: 3,
+                            color: Color(0xff306fd5),
+                          ),
+                        ),
+                      )
+                    : TextButton(onPressed: null, child: Text(''))
               ],
             ),
           );
