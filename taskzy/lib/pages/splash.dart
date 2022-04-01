@@ -1,6 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:taskzy/pages/onBoarding.dart';
 import '../main.dart';
 
 class Splash extends StatefulWidget {
@@ -11,8 +11,15 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState() {
-    Timer(Duration(seconds: 4), () {});
     super.initState();
+
+    Timer(Duration(seconds: 4), () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Onboarding(),
+          ));
+    });
   }
 
   @override
