@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class UnbodingContent {
-  RichText text;
-  String? image;
+  RichText texts;
+  String images;
 
-  UnbodingContent({required this.text, this.image});
+  UnbodingContent({required this.texts, required this.images});
 }
 
 List<UnbodingContent> contents = [
   UnbodingContent(
-      text: RichText(
+      texts: RichText(
         textAlign: TextAlign.center,
         text: const TextSpan(
           text: 'Um jeito',
@@ -30,11 +30,51 @@ List<UnbodingContent> contents = [
           ],
         ),
       ),
-      image: 'assets/images/Pin.png'),
+      images: 'assets/images/Pin.png'),
   UnbodingContent(
-      // text: 'Organize seu tempo de forma otimizada.',
-      image: 'assets/images/Clock.png'),
+      texts: RichText(
+        textAlign: TextAlign.center,
+        text: const TextSpan(
+          text: 'Um jeito',
+          style: TextStyle(
+            color: Color(0xff306FD5),
+            fontSize: 36,
+          ),
+          children: <TextSpan>[
+            TextSpan(
+              text: ' novo',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(text: ' para organizar suas'),
+            TextSpan(
+              text: ' tasks',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+      images: 'assets/images/Clock.png'),
   UnbodingContent(
-      // text: 'Tudo dentro do prazo, sem perder mais nada.',
-      image: 'assets/images/Tick.png'),
+      texts: RichText(
+        textAlign: TextAlign.center,
+        text: const TextSpan(
+          text: 'Um jeito',
+          style: TextStyle(
+            color: Color(0xff306FD5),
+            fontSize: 36,
+          ),
+          children: <TextSpan>[
+            TextSpan(
+              text: ' novo',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(text: ' para organizar suas'),
+            TextSpan(
+              text: ' tasks',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+      images: 'assets/images/Tick.png'),
 ];
