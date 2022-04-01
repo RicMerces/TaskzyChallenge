@@ -14,6 +14,11 @@ class _Onboarding02State extends State<Onboarding02> {
     return Scaffold(
       body: PageView.builder(
         itemCount: contents.length,
+        onPageChanged: (int index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
         itemBuilder: (_, i) {
           return Padding(
             padding: const EdgeInsets.all(40),
@@ -41,16 +46,36 @@ class _Onboarding02State extends State<Onboarding02> {
                           ),
                           fixedSize: const Size(318, 67),
                           side: const BorderSide(
-                            width: 3,
+                            width: 2,
                             color: Color(0xff306fd5),
                           ),
                         ),
                       )
-                    : TextButton(onPressed: null, child: Text(''))
+                    : Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(
+                            contents.length,
+                            (index) => buildDot(index, context),
+                          ),
+                        ),
+                      ),
               ],
             ),
           );
         },
+      ),
+    );
+  }
+
+  Container buildDot(int index, BuildContext context) {
+    return Container(
+      height: 10,
+      width: currentIndex == index ? 25 : 10,
+      margin: EdgeInsets.only(right: 5),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Color(0xffD0D9E6),
       ),
     );
   }
