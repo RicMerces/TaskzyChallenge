@@ -9,10 +9,25 @@ class Onboarding02 extends StatefulWidget {
 class _Onboarding02State extends State<Onboarding02> {
   int currentIndex = 0;
 
+  PageController? _controller;
+
+  @override
+  void initState() {
+    _controller = PageController(initialPage: 0);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
+        controller: _controller,
         itemCount: contents.length,
         onPageChanged: (int index) {
           setState(() {
@@ -29,6 +44,15 @@ class _Onboarding02State extends State<Onboarding02> {
                   contents[i].images,
                   height: 300,
                 ),
+                TextButton(
+                    onPressed: () => {
+                          _controller?.animateToPage(
+                            contents.length - 1,
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeInOut,
+                          )
+                        },
+                    child: Text('Skip')),
                 contents[i].texts,
                 i == contents.length - 1
                     ? TextButton(
