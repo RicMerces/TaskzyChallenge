@@ -35,19 +35,21 @@ List<UnbodingContent> contents = [
       texts: RichText(
         textAlign: TextAlign.center,
         text: const TextSpan(
-          text: 'Um jeito',
+          text: '',
           style: TextStyle(
             color: Color(0xff306FD5),
             fontSize: 36,
           ),
           children: <TextSpan>[
             TextSpan(
-              text: ' novo',
+              text: 'Organize',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            TextSpan(text: ' para organizar suas'),
             TextSpan(
-              text: ' tasks',
+              text: ' eu tempo de forma',
+            ),
+            TextSpan(
+              text: ' otimizada.',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ],
@@ -58,21 +60,17 @@ List<UnbodingContent> contents = [
       texts: RichText(
         textAlign: TextAlign.center,
         text: const TextSpan(
-          text: 'Um jeito',
+          text: 'Tudo dentro do',
           style: TextStyle(
             color: Color(0xff306FD5),
             fontSize: 36,
           ),
           children: <TextSpan>[
             TextSpan(
-              text: ' novo',
+              text: ' prazo',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            TextSpan(text: ' para organizar suas'),
-            TextSpan(
-              text: ' tasks',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+            TextSpan(text: ', sem perder mais nada.'),
           ],
         ),
       ),
