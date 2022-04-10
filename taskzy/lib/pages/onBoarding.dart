@@ -46,21 +46,24 @@ class _OnboardingState extends State<Onboarding> {
                   children: [
                     Container(
                       alignment: Alignment.centerRight,
-                      child: TextButton(
-                          onPressed: () => {
-                                _controller?.animateToPage(
-                                  contents.length - 1,
-                                  duration: const Duration(milliseconds: 400),
-                                  curve: Curves.easeInOut,
-                                )
-                              },
-                          child: const Text(
-                            'Skip',
-                            style: TextStyle(
-                              color: Color(0xff306FD5),
-                              fontSize: 20,
-                            ),
-                          )),
+                      child: i == contents.length - 1
+                          ? null
+                          : TextButton(
+                              onPressed: () => {
+                                    _controller?.animateToPage(
+                                      contents.length - 1,
+                                      duration:
+                                          const Duration(milliseconds: 400),
+                                      curve: Curves.easeInOut,
+                                    )
+                                  },
+                              child: Text(
+                                'Skip',
+                                style: TextStyle(
+                                  color: Color(0xff306FD5),
+                                  fontSize: 20,
+                                ),
+                              )),
                     )
                   ],
                 ),
