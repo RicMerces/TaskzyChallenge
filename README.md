@@ -20,3 +20,15 @@ Desenvolver layout das 3 telas de onBoarding
 ### Regras de Negócio 
 - Botão “Skip” pula para 3º tela
 
+
+# Desafio 03
+Desenvolver layout da tela de login seguindo as regras de negócio abaixo.
+
+## Regras de Negócio
+
+- Nome de usuário deve ter mais que 3 letras e menos de 10
+- Senha deve aparecer e ocultar ao apertar o ícon
+    - Default: Senha oculta
+- Senha deve ter 8 ou mais caracteres
+- Senha deve ter letras e números
+
