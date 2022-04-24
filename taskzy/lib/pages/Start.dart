@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:taskzy/pages/content_model.dart';
 
 class Start extends StatefulWidget {
   const Start({Key? key}) : super(key: key);
@@ -14,7 +13,7 @@ class _StartState extends State<Start> {
     return Scaffold(
       backgroundColor: Color(0xff306FD5),
       body: Padding(
-        padding: EdgeInsets.only(top: 120, left: 40, right: 40),
+        padding: EdgeInsets.only(top: 50, left: 40, right: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -42,6 +41,44 @@ class _StartState extends State<Start> {
                   height: 1.3,
                 ),
               ),
+            ),
+            Column(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Login',
+                    style: TextStyle(color: Color(0xff306FD5), fontSize: 22),
+                  ),
+                  style: TextButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    fixedSize: const Size(318, 67),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 25),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Cadastro',
+                      style: TextStyle(color: Colors.white, fontSize: 22),
+                    ),
+                    style: TextButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      fixedSize: const Size(318, 67),
+                      side: BorderSide(
+                        width: 2,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
           ],
         ),
