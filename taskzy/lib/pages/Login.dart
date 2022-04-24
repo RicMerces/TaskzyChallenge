@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskzy/pages/Start.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -15,11 +16,27 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: Color(0xffF2EFE9),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Padding(
-            padding: EdgeInsets.zero,
-            child: Container(),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 30),
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Start(),
+                          ));
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Color(0xffff306FD5),
+                      size: 36,
+                    )),
+              )
+            ],
           ),
           Padding(
               padding: EdgeInsets.only(left: 40, right: 40),
@@ -63,8 +80,9 @@ class _LoginState extends State<Login> {
                       labelText: 'Senha',
                       suffixIcon: IconButton(
                           icon: Icon(_isObscure
-                              ? Icons.visibility
-                              : Icons.visibility_off),
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined),
+                          color: Color(0xff306FD5),
                           onPressed: () {
                             setState(() {
                               _isObscure = !_isObscure;
