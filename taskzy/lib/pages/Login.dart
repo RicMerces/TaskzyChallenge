@@ -8,6 +8,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool _isObscure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +17,10 @@ class _LoginState extends State<Login> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          Padding(
+            padding: EdgeInsets.zero,
+            child: Container(),
+          ),
           Padding(
               padding: EdgeInsets.only(left: 40, right: 40),
               child: RichText(
@@ -36,27 +42,80 @@ class _LoginState extends State<Login> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(bottom: 25),
-                    child: TextFormField(
+                    child: TextField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(20),
                           border: OutlineInputBorder(
                               borderSide: const BorderSide(
-                                  width: 3, color: Colors.blue),
+                                  width: 3, color: Color(0xff306FD5)),
                               borderRadius: BorderRadius.circular(5)),
                           labelText: 'Usuario'),
                     ),
                   ),
-                  TextFormField(
+                  TextField(
+                    obscureText: _isObscure,
                     decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(20),
-                        border: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(width: 3, color: Colors.blue),
-                            borderRadius: BorderRadius.circular(5)),
-                        labelText: 'Senha'),
+                      contentPadding: EdgeInsets.all(20),
+                      border: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              width: 3, color: Color(0xff306FD5)),
+                          borderRadius: BorderRadius.circular(5)),
+                      labelText: 'Senha',
+                      suffixIcon: IconButton(
+                          icon: Icon(_isObscure
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              _isObscure = !_isObscure;
+                            });
+                          }),
+                    ),
                   ),
                 ],
               )),
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Não tem uma conta?',
+                      style: TextStyle(color: Color(0xff4D4D4D), fontSize: 15),
+                    ),
+                    TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Registre-se.',
+                          style: TextStyle(
+                            color: Color(0xff306FD5),
+                            fontSize: 15,
+                          ),
+                        ))
+                  ],
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Login',
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.white,
+                  ),
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Color(0xff306FD5),
+                  fixedSize: Size(318, 67),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              )
+            ],
+          ),
         ],
       ),
     );
