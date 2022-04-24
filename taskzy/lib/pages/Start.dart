@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskzy/pages/Login.dart';
 
 class Start extends StatefulWidget {
   const Start({Key? key}) : super(key: key);
@@ -8,6 +9,15 @@ class Start extends StatefulWidget {
 }
 
 class _StartState extends State<Start> {
+  void abrirLogin() {
+    print('Foi');
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Login(),
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +55,7 @@ class _StartState extends State<Start> {
             Column(
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => abrirLogin(),
                   child: const Text(
                     'Login',
                     style: TextStyle(color: Color(0xff306FD5), fontSize: 22),
