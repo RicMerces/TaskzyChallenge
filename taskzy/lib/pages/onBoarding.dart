@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskzy/pages/Start.dart';
 import 'content_model.dart';
 
 class Onboarding extends StatefulWidget {
@@ -74,7 +75,12 @@ class _OnboardingState extends State<Onboarding> {
                 contents[i].texts,
                 i == contents.length - 1
                     ? TextButton(
-                        onPressed: () => {},
+                        onPressed: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Start()),
+                          )
+                        },
                         child: const Text(
                           'Começar',
                           style: TextStyle(
