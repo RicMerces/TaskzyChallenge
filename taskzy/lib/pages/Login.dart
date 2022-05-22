@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskzy/pages/Registro.dart';
 import 'package:taskzy/pages/Start.dart';
 
 class Login extends StatefulWidget {
@@ -10,6 +11,12 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   bool _isObscure = true;
+
+  void abrirRegistro() {
+    print('Registro');
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => Registro()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +111,7 @@ class _LoginState extends State<Login> {
                       style: TextStyle(color: Color(0xff4D4D4D), fontSize: 15),
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () => abrirRegistro(),
                         child: const Text(
                           'Registre-se.',
                           style: TextStyle(

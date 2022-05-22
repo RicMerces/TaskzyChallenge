@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskzy/pages/Login.dart';
+import 'package:taskzy/pages/Registro.dart';
 
 class Start extends StatefulWidget {
   const Start({Key? key}) : super(key: key);
@@ -10,11 +11,20 @@ class Start extends StatefulWidget {
 
 class _StartState extends State<Start> {
   void abrirLogin() {
-    print('Foi');
+    print('Login');
     Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => const Login(),
+        ));
+  }
+
+  void abrirRegistro() {
+    print('Registro');
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Registro(),
         ));
   }
 
@@ -71,7 +81,7 @@ class _StartState extends State<Start> {
                 Padding(
                   padding: EdgeInsets.only(top: 25),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () => abrirRegistro(),
                     child: const Text(
                       'Cadastro',
                       style: TextStyle(color: Colors.white, fontSize: 22),
