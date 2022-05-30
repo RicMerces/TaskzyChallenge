@@ -8,6 +8,7 @@ class Registro extends StatefulWidget {
 }
 
 class _RegistroState extends State<Registro> {
+  bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class _RegistroState extends State<Registro> {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 100, right: 30),
+                      padding: EdgeInsets.only(top: 60, right: 30),
                       child: RichText(
                         text: const TextSpan(
                             text: 'Bem-vinde! \n',
@@ -96,10 +97,21 @@ class _RegistroState extends State<Registro> {
                     Padding(
                       padding: EdgeInsets.only(top: 30),
                       child: TextField(
+                        obscureText: _isObscure,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                             labelText: 'Senha',
                             contentPadding: EdgeInsets.all(18),
+                            suffixIcon: IconButton(
+                                icon: Icon(_isObscure
+                                    ? Icons.visibility_outlined
+                                    : Icons.visibility_off_outlined),
+                                color: Color(0xff306FD5),
+                                onPressed: () {
+                                  setState(() {
+                                    _isObscure = !_isObscure;
+                                  });
+                                }),
                             border: OutlineInputBorder(
                                 borderSide: const BorderSide(
                                     width: 3, color: Color(0xff306FD5)),
@@ -125,14 +137,26 @@ class _RegistroState extends State<Registro> {
                     Padding(
                       padding: EdgeInsets.only(top: 30),
                       child: TextField(
+                        obscureText: _isObscure,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                             labelText: 'Confirmação de Senha',
                             contentPadding: EdgeInsets.all(18),
+                            suffixIcon: IconButton(
+                                icon: Icon(_isObscure
+                                    ? Icons.visibility_outlined
+                                    : Icons.visibility_off_outlined),
+                                color: Color(0xff306FD5),
+                                onPressed: () {
+                                  setState(() {
+                                    _isObscure = !_isObscure;
+                                  });
+                                }),
                             border: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    width: 3, color: Color(0xff306FD5)),
-                                borderRadius: BorderRadius.circular(5))),
+                              borderSide: const BorderSide(
+                                  width: 3, color: Color(0xff306FD5)),
+                              borderRadius: BorderRadius.circular(5),
+                            )),
                       ),
                     ),
                     Column(children: [
