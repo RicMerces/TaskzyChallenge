@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widget/home_card.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,28 +11,22 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   String _nome = 'Exemplo';
 
-  set nome(String newNome) {
-    _nome = newNome;
-  }
-
-  String get nome {
-    return _nome;
-  }
-
-  bool? _checkmark = false;
+  bool _checkmark = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          child: Padding(
-        padding: EdgeInsets.only(top: 40, left: 50, right: 50),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Olá $nome,',
+                  'Olá $_nome,',
                   style: TextStyle(
                     color: Color(0xff306FD5),
                     fontSize: 25,
@@ -40,38 +35,21 @@ class _HomeState extends State<Home> {
                 Image.asset('assets/images/Taskzy.png')
               ],
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Checkbox(
-                            value: _checkmark,
-                            onChanged: (bool? x) {
-                              print(x);
-                              setState(() {
-                                _checkmark = x;
-                              });
-                            },
-                          ),
-                          Column(
-                            children: [Text('Ligar para médico')],
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                )
-              ],
+            SizedBox(height: 30),
+            HomeCard(
+              checkmark: _checkmark,
+              title: 'PAÇOCA',
+              description: 'Dr. Jorge - (71) 99999-1234',
+              date: '9h00 - 22/10/2022',
+              onChanged: (value) {
+                setState(() {
+                  _checkmark = !_checkmark;
+                });
+              },
             ),
           ],
         ),
-      )),
+      ),
     );
   }
 }
