@@ -32,19 +32,21 @@ class _HomeState extends State<Home> {
                     fontSize: 25,
                   ),
                 ),
-                Image.asset('assets/images/Taskzy.png')
+                Image.asset('assets/images/Taskzy.png'),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 50),
             HomeCard(
               checkmark: _checkmark,
-              title: 'PAÇOCA',
+              title: 'Ligar para médico',
               description: 'Dr. Jorge - (71) 99999-1234',
               date: '9h00 - 22/10/2022',
               onChanged: (value) {
-                setState(() {
-                  _checkmark = !_checkmark;
-                });
+                setState(
+                  () {
+                    _checkmark = !_checkmark;
+                  },
+                );
               },
             ),
           ],
