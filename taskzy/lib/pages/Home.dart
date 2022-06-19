@@ -17,6 +17,9 @@ class _HomeState extends State<Home> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
+        child: const Icon(
+          Icons.add,
+        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
@@ -36,6 +39,76 @@ class _HomeState extends State<Home> {
               ],
             ),
             SizedBox(height: 50),
+            HomeCard(
+              checkmark: _checkmark,
+              title: 'Ligar para médico',
+              description: 'Dr. Jorge - (71) 99999-1234',
+              date: '9h00 - 22/10/2022',
+              onChanged: (value) {
+                setState(
+                  () {
+                    _checkmark = !_checkmark;
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20),
+            HomeCard(
+              checkmark: _checkmark,
+              title: 'Ligar para médico',
+              description: 'Dr. Jorge - (71) 99999-1234',
+              date: '9h00 - 22/10/2022',
+              onChanged: (value) {
+                setState(
+                  () {
+                    _checkmark = !_checkmark;
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20),
+            HomeCard(
+              checkmark: _checkmark,
+              title: 'Ligar para médico',
+              description: 'Dr. Jorge - (71) 99999-1234',
+              date: '9h00 - 22/10/2022',
+              onChanged: (value) {
+                setState(
+                  () {
+                    _checkmark = !_checkmark;
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20),
+            HomeCard(
+              checkmark: _checkmark,
+              title: 'Ligar para médico',
+              description: 'Dr. Jorge - (71) 99999-1234',
+              date: '9h00 - 22/10/2022',
+              onChanged: (value) {
+                setState(
+                  () {
+                    _checkmark = !_checkmark;
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20),
+            HomeCard(
+              checkmark: _checkmark,
+              title: 'Ligar para médico',
+              description: 'Dr. Jorge - (71) 99999-1234',
+              date: '9h00 - 22/10/2022',
+              onChanged: (value) {
+                setState(
+                  () {
+                    _checkmark = !_checkmark;
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20),
             HomeCard(
               checkmark: _checkmark,
               title: 'Ligar para médico',
