@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskzy/pages/Registro.dart';
 import 'package:taskzy/pages/Start.dart';
 
 class Login extends StatefulWidget {
@@ -11,10 +12,156 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   bool _isObscure = true;
 
+  void abrirRegistro() {
+    print('Registro');
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => Registro()));
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffF2EFE9),
+
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Color(0xffF2EFE9),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Start(),
+                  ));
+            },
+            icon: Icon(
+              Icons.arrow_back_ios_rounded,
+              color: Color(0xffff306FD5),
+              size: 30,
+            )),
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 40, horizontal: 30),
+        child: Column(
+          children: [
+            RichText(
+              text: const TextSpan(
+                text: 'Vamos entrar.',
+                style: TextStyle(
+                  fontSize: 33,
+                  color: Color(0xff306FD5),
+                  fontWeight: FontWeight.bold,
+                ),
+                children: [
+                  TextSpan(
+                      text: ' Sentimos sua falta!',
+                      style: TextStyle(fontWeight: FontWeight.normal))
+                ],
+              ),
+            ),
+            SizedBox(height: 100),
+            TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(20),
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    width: 3,
+                    color: Color(0xff306FD5),
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    width: 1,
+                    color: Color(0xff306FD5),
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                labelText: 'Usuario',
+                labelStyle: TextStyle(
+                  color: Color(0xff306FD5),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              obscureText: _isObscure,
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(20),
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    width: 3,
+                    color: Color(0xff306FD5),
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    width: 1,
+                    color: Color(0xff306FD5),
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                labelText: 'Senha',
+                labelStyle: TextStyle(
+                  color: Color(0xff306FD5),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(_isObscure
+                      ? Icons.visibility_outlined
+                      : Icons.visibility_off_outlined),
+                  color: Color(0xff306FD5),
+                  onPressed: () {
+                    setState(
+                      () {
+                        _isObscure = !_isObscure;
+                      },
+                    );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: 80),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Não tem uma conta?',
+                  style: TextStyle(color: Color(0xff4D4D4D), fontSize: 15),
+                ),
+                TextButton(
+                  onPressed: () => abrirRegistro(),
+                  child: const Text(
+                    'Registre-se.',
+                    style: TextStyle(
+                      color: Color(0xff306FD5),
+                      fontSize: 15,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                'Login',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+              ),
+              style: TextButton.styleFrom(
+                backgroundColor: Color(0xff306FD5),
+                fixedSize: Size(318, 67),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            )
+          ],
+        ),
+
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -135,6 +282,7 @@ class _LoginState extends State<Login> {
             ],
           ),
         ],
+
       ),
     );
   }

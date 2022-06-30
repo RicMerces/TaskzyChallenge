@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskzy/pages/Login.dart';
+import 'package:taskzy/pages/Registro.dart';
 
 class Start extends StatefulWidget {
   const Start({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class Start extends StatefulWidget {
 
 class _StartState extends State<Start> {
   void abrirLogin() {
-    print('Foi');
+    print('Login');
     Navigator.push(
         context,
         MaterialPageRoute(
@@ -18,14 +19,22 @@ class _StartState extends State<Start> {
         ));
   }
 
+  void abrirRegistro() {
+    print('Registro');
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Registro(),
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff306FD5),
-      body: Padding(
-        padding: EdgeInsets.only(top: 50, left: 40, right: 40),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             RichText(
               text: const TextSpan(
@@ -41,17 +50,16 @@ class _StartState extends State<Start> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(right: 50),
-              child: Text(
-                'Administre, organize e realize suas tasks como nunca antes.',
-                style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.white,
-                  height: 1.3,
-                ),
+            SizedBox(height: 40),
+            const Text(
+              'Administre, organize e realize suas tasks como nunca antes.',
+              style: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+                height: 1.3,
               ),
             ),
+            SizedBox(height: 150),
             Column(
               children: [
                 TextButton(
@@ -71,7 +79,7 @@ class _StartState extends State<Start> {
                 Padding(
                   padding: EdgeInsets.only(top: 25),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () => abrirRegistro(),
                     child: const Text(
                       'Cadastro',
                       style: TextStyle(color: Colors.white, fontSize: 22),
