@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskzy/pages/adicionar_task.dart';
 import '../widget/home_card.dart';
 
 class Home extends StatefulWidget {
@@ -16,7 +17,14 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AdicionarTask(),
+            ),
+          );
+        },
         child: const Icon(
           Icons.add,
         ),

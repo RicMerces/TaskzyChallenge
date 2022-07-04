@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:taskzy/pages/Start.dart';
+import 'package:taskzy/pages/start.dart';
 import 'content_model.dart';
 
 class Onboarding extends StatefulWidget {

@@ -12,6 +12,14 @@ class _RegistroState extends State<Registro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          size: 30,
+          color: Color(0xff306FD5),
+        ),
+      ),
       backgroundColor: Color(0xffF2EFE9),
       body: SingleChildScrollView(
         child: Container(

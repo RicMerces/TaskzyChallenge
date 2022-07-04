@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:taskzy/pages/onBoarding.dart';
+import 'package:taskzy/pages/onboarding.dart';
 import '../main.dart';
 
 class Splash extends StatefulWidget {

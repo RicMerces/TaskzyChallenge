@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:taskzy/pages/Home.dart';
-import 'package:taskzy/pages/Registro.dart';
-import 'package:taskzy/pages/Start.dart';
-import 'package:taskzy/pages/onBoarding.dart';
+import 'package:taskzy/pages/home.dart';
+import 'package:taskzy/pages/registro.dart';
+import 'package:taskzy/pages/start.dart';
+import 'package:taskzy/pages/onboarding.dart';
 import 'pages/splash.dart';
 
 void main() {

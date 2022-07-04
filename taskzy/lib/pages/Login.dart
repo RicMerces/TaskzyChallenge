@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:taskzy/pages/Registro.dart';
-import 'package:taskzy/pages/Start.dart';
+import 'package:taskzy/pages/registro.dart';
+import 'package:taskzy/pages/start.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
