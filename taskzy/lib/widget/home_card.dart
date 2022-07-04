@@ -25,12 +25,17 @@ class HomeCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Checkbox(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
             value: checkmark,
             onChanged: onChanged ?? (value) {},
             side: const BorderSide(
               color: Color(0xff306FD5),
               width: 1.5,
             ),
+            activeColor: Color(0xff306FD5),
+            checkColor: Color(0xff306FD5),
           ),
           SizedBox(
             width: 30,
@@ -68,9 +73,17 @@ class HomeCard extends StatelessWidget {
         ],
       ),
       decoration: BoxDecoration(
-        color: Color(0xffD0D9E6),
-        borderRadius: BorderRadius.circular(20),
-      ),
+          color: checkmark == false ? Color(0xffD0D9E6) : null,
+          borderRadius: BorderRadius.circular(20),
+          border: checkmark == true
+              ? Border.all(
+                  width: 1.5,
+                  color: Color(0xff306FD5),
+                )
+              : Border.all(
+                  width: 1.5,
+                  color: Color(0xffD0D9E6),
+                )),
     );
   }
 }

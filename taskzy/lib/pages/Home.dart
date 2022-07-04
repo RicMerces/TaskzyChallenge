@@ -20,6 +20,7 @@ class _HomeState extends State<Home> {
         child: const Icon(
           Icons.add,
         ),
+        backgroundColor: Color(0xff306FD5),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
