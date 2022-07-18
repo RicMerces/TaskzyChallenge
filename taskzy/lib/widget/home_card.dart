@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:taskzy/model/checkmark.dart';
 
-class HomeCard extends StatelessWidget {
-  final bool checkmark;
-  final Function(bool?)? onChanged;
+class HomeCard extends StatefulWidget {
+  // final bool checkmark;
+  // final Function(bool?)? onChanged;
 
-  final String title;
-  final String? description;
-  final String? date;
+  // final String title;
+  // final String? description;
+  // final String? date;
 
-  const HomeCard({
-    Key? key,
-    this.onChanged,
-    required this.checkmark,
-    required this.title,
-    this.description = '',
-    this.date = '',
-  }) : super(key: key);
+  const HomeCard({Key? key, required this.modelo
+      // this.onChanged,
+      // required this.checkmark,
+      // required this.title,
+      // this.description = '',
+      // this.date = '',
+      })
+      : super(key: key);
 
+  final Checkmark modelo;
+
+  @override
+  State<HomeCard> createState() => _HomeCardState();
+}
+
+class _HomeCardState extends State<HomeCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,8 +37,12 @@ class HomeCard extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5),
             ),
-            value: checkmark,
-            onChanged: onChanged ?? (value) {},
+            value: widget.modelo.checked,
+            onChanged: (bool? value) {
+              setState(() {
+                widget.modelo.checked = value!;
+              });
+            },
             side: const BorderSide(
               color: Color(0xff306FD5),
               width: 1.5,
@@ -45,7 +57,7 @@ class HomeCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title,
+                widget.modelo.title,
                 style: const TextStyle(
                   fontSize: 20,
                   color: Color(0xff306FD5),
@@ -54,7 +66,7 @@ class HomeCard extends StatelessWidget {
               ),
               const SizedBox(height: 5),
               Text(
-                description!,
+                widget.modelo.description,
                 style: const TextStyle(
                   fontSize: 15,
                   color: Color(0xff306FD5),
@@ -62,7 +74,7 @@ class HomeCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                date!,
+                widget.modelo.date,
                 style: const TextStyle(
                   fontSize: 13,
                   color: Color(0xff306FD5),
@@ -74,9 +86,10 @@ class HomeCard extends StatelessWidget {
         ],
       ),
       decoration: BoxDecoration(
-          color: checkmark == false ? const Color(0xffD0D9E6) : null,
+          color:
+              widget.modelo.checked == false ? const Color(0xffD0D9E6) : null,
           borderRadius: BorderRadius.circular(20),
-          border: checkmark == true
+          border: widget.modelo.checked == true
               ? Border.all(
                   width: 1.5,
                   color: const Color(0xff306FD5),

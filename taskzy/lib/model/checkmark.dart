@@ -6,7 +6,7 @@ class Checkmark {
       required this.description});
 
   final String title;
-  final bool checked;
+  bool checked;
   final String date;
   final String description;
 }
