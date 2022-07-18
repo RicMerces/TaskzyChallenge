@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:taskzy/pages/home.dart';
-import 'package:taskzy/pages/home02.dart';
 import 'package:taskzy/pages/registro.dart';
 import 'package:taskzy/pages/start.dart';
 import 'package:taskzy/pages/onboarding.dart';
@@ -13,9 +12,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home02(),
+      home: Home(),
     );
   }
 }

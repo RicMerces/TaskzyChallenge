@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Color(0xff306FD5),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 30),
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
         child: Column(
           children: [
             Row(
