@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskzy/pages/home.dart';
+import 'package:taskzy/pages/home02.dart';
 import 'package:taskzy/pages/registro.dart';
 import 'package:taskzy/pages/start.dart';
 import 'package:taskzy/pages/onboarding.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Home02(),
     );
   }
 }

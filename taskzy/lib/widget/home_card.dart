@@ -20,7 +20,8 @@ class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.all(10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -34,10 +35,10 @@ class HomeCard extends StatelessWidget {
               color: Color(0xff306FD5),
               width: 1.5,
             ),
-            activeColor: Color(0xff306FD5),
-            checkColor: Color(0xff306FD5),
+            activeColor: const Color(0xff306FD5),
+            checkColor: const Color(0xff306FD5),
           ),
-          SizedBox(
+          const SizedBox(
             width: 30,
           ),
           Column(
@@ -51,7 +52,7 @@ class HomeCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
                 description!,
                 style: const TextStyle(
@@ -59,7 +60,7 @@ class HomeCard extends StatelessWidget {
                   color: Color(0xff306FD5),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 date!,
                 style: const TextStyle(
@@ -73,16 +74,16 @@ class HomeCard extends StatelessWidget {
         ],
       ),
       decoration: BoxDecoration(
-          color: checkmark == false ? Color(0xffD0D9E6) : null,
+          color: checkmark == false ? const Color(0xffD0D9E6) : null,
           borderRadius: BorderRadius.circular(20),
           border: checkmark == true
               ? Border.all(
                   width: 1.5,
-                  color: Color(0xff306FD5),
+                  color: const Color(0xff306FD5),
                 )
               : Border.all(
                   width: 1.5,
-                  color: Color(0xffD0D9E6),
+                  color: const Color(0xffD0D9E6),
                 )),
     );
   }
